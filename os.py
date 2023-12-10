@@ -42,6 +42,7 @@ class Consumer(threading.Thread):
         items_consumed =+ 1
         producer = Producer()
         Consumer =Consumer()
+if__=="__main__":         
         Consumer.start()
         producer.start()
         producer.join()
