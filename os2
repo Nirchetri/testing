@@ -1,0 +1,22 @@
+#9. Write A Program That Implements The LRU Page-Replacement Algorithm
+
+size = 3
+reference_string = [1, 2, 1, 0, 3, 4, 2, 4]
+pages = []
+faults = 0
+hits = 0
+for ref_page in reference_string:
+    if ref_page in pages:
+        pages.remove(ref_page)
+        pages.append(ref_page)
+        hits =+ 1
+    else:
+        faults +=1
+        if(len(pages)<size):
+            pages.append(ref_page)
+        else:
+            pages.remove(pages[0])
+            pages.append(ref_page)
+            print("Total number of Page Hits:",hits)
+            print("Total number of Page Faults:",faults)
+                    
